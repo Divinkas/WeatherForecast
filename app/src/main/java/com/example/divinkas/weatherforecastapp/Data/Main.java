@@ -7,30 +7,30 @@ public class Main {
 
     @SerializedName("temp")
     @Expose
-    private Double temp;
+    private double temp;
     @SerializedName("temp_min")
     @Expose
-    private Double tempMin;
+    private double tempMin;
     @SerializedName("temp_max")
     @Expose
-    private Double tempMax;
+    private double tempMax;
     @SerializedName("pressure")
     @Expose
-    private Double pressure;
+    private double pressure;
     @SerializedName("sea_level")
     @Expose
-    private Double seaLevel;
+    private double seaLevel;
     @SerializedName("grnd_level")
     @Expose
-    private Double grndLevel;
+    private double grndLevel;
     @SerializedName("humidity")
     @Expose
-    private Integer humidity;
+    private double humidity;
     @SerializedName("temp_kf")
     @Expose
-    private Integer tempKf;
+    private double tempKf;
 
-    public Double getTemp() {
+    public double getTemp() {
         return temp;
     }
 
@@ -38,7 +38,7 @@ public class Main {
         this.temp = temp;
     }
 
-    public Double getTempMin() {
+    public double getTempMin() {
         return tempMin;
     }
 
@@ -46,7 +46,7 @@ public class Main {
         this.tempMin = tempMin;
     }
 
-    public Double getTempMax() {
+    public double getTempMax() {
         return tempMax;
     }
 
@@ -54,7 +54,7 @@ public class Main {
         this.tempMax = tempMax;
     }
 
-    public Double getPressure() {
+    public double getPressure() {
         return pressure;
     }
 
@@ -62,7 +62,7 @@ public class Main {
         this.pressure = pressure;
     }
 
-    public Double getSeaLevel() {
+    public double getSeaLevel() {
         return seaLevel;
     }
 
@@ -70,7 +70,7 @@ public class Main {
         this.seaLevel = seaLevel;
     }
 
-    public Double getGrndLevel() {
+    public double getGrndLevel() {
         return grndLevel;
     }
 
@@ -78,7 +78,7 @@ public class Main {
         this.grndLevel = grndLevel;
     }
 
-    public Integer getHumidity() {
+    public double getHumidity() {
         return humidity;
     }
 
@@ -86,7 +86,7 @@ public class Main {
         this.humidity = humidity;
     }
 
-    public Integer getTempKf() {
+    public double getTempKf() {
         return tempKf;
     }
 

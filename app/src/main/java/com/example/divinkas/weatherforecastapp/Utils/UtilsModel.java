@@ -24,6 +24,8 @@ public class UtilsModel {
                 if(!current_day.equals(day)){
                     current_count++;
                     current_day = day;
+
+                    weatherResponse.getList().get(position).setDtTxt(day);
                     data.add(weatherResponse.getList().get(position));
                 }
                 if(current_count >= 3){
@@ -46,6 +48,7 @@ public class UtilsModel {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return format2.format(date);
+        if(date!= null) return format2.format(date);
+        else return "";
     }
 }

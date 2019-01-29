@@ -19,7 +19,6 @@ public class WeatherActivity extends NetworkActivity implements WeatherContract 
 
     private ProgressBar progressBar;
     private RecyclerView recyclerWeather;
-    private WeatherAdapter weatherAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +32,26 @@ public class WeatherActivity extends NetworkActivity implements WeatherContract 
         progressBar = findViewById(R.id.progress);
         recyclerWeather = findViewById(R.id.rvWeather);
 
-        String data = getIntent().getStringExtra(Constants.CITY);
-        if(data!=null){
-            Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
+        String city = getIntent().getStringExtra(Constants.CITY);
+        double lon = getIntent().getDoubleExtra(Constants.LON, -999.0f);
+        double lat = getIntent().getDoubleExtra(Constants.LAT, -999.0f);
+
+        if(city!=null){
+            presenter.load(city);
+        } else if(lat != -999.0f && lon != -999.0f){
+            presenter.load(lat, lon);
+        } else{
+            Toast.makeText(this, "No searched data!", Toast.LENGTH_SHORT).show();
         }
-        //check data
-        //presenter.load("London");
     }
 
     @Override
     public void loadWeather(WeatherResponse weatherResponse) {
-        if(recyclerWeather != null){
+        if(recyclerWeather != null && weatherResponse != null){
             recyclerWeather.setLayoutManager(new LinearLayoutManager(this));
-            //init adapter
-            //recyclerWeather.setAdapter();
+            WeatherAdapter weatherAdapter = new WeatherAdapter(this, weatherResponse);
+            recyclerWeather.setAdapter(weatherAdapter);
+
         }
     }
 

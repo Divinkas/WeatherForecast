@@ -20,15 +20,18 @@ public class List {
     @SerializedName("wind")
     @Expose
     private Wind wind;
-    @SerializedName("snow")
+    @SerializedName("rain")
     @Expose
-    private Snow snow;
+    private Rain rain;
     @SerializedName("sys")
     @Expose
     private Sys sys;
     @SerializedName("dt_txt")
     @Expose
     private String dtTxt;
+    @SerializedName("snow")
+    @Expose
+    private Snow snow;
 
     public Integer getDt() {
         return dt;
@@ -70,12 +73,12 @@ public class List {
         this.wind = wind;
     }
 
-    public Snow getSnow() {
-        return snow;
+    public Rain getRain() {
+        return rain;
     }
 
-    public void setSnow(Snow snow) {
-        this.snow = snow;
+    public void setRain(Rain rain) {
+        this.rain = rain;
     }
 
     public Sys getSys() {
@@ -92,5 +95,13 @@ public class List {
 
     public void setDtTxt(String dtTxt) {
         this.dtTxt = dtTxt;
+    }
+
+    public Snow getSnow() {
+        return snow;
+    }
+
+    public void setSnow(Snow snow) {
+        this.snow = snow;
     }
 }

@@ -29,7 +29,8 @@ public class WeatherPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         weatherResponse ->{
-                            weatherContract.loadWeather(utilsModel.getThreeItemsWeather(weatherResponse));
+                            //utilsModel.getThreeItemsWeather(weatherResponse)
+                            weatherContract.loadWeather(weatherResponse);
                             weatherContract.hideLoading();
                         },
                         throwable -> weatherContract.showErrorLoading()
@@ -44,7 +45,8 @@ public class WeatherPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         weatherResponse -> {
-                            weatherContract.loadWeather(utilsModel.getThreeItemsWeather(weatherResponse));
+                            //utilsModel.getThreeItemsWeather(weatherResponse)
+                            weatherContract.loadWeather(weatherResponse);
                             weatherContract.hideLoading();
                         },
                         throwable -> weatherContract.showErrorLoading()
