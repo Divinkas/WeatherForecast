@@ -1,5 +1,6 @@
 package com.example.divinkas.weatherforecastapp.Presenter;
 
+import com.example.divinkas.weatherforecastapp.Data.WeatherResponse;
 import com.example.divinkas.weatherforecastapp.Model.WeatherModel;
 import com.example.divinkas.weatherforecastapp.Utils.UtilsModel;
 import com.example.divinkas.weatherforecastapp.View.Contract.WeatherContract;
@@ -29,8 +30,7 @@ public class WeatherPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         weatherResponse ->{
-                            //utilsModel.getThreeItemsWeather(weatherResponse)
-                            weatherContract.loadWeather(weatherResponse);
+                            weatherContract.loadWeather(utilsModel.getThreeItemsWeather(weatherResponse));
                             weatherContract.hideLoading();
                         },
                         throwable -> weatherContract.showErrorLoading()
@@ -45,8 +45,7 @@ public class WeatherPresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         weatherResponse -> {
-                            //utilsModel.getThreeItemsWeather(weatherResponse)
-                            weatherContract.loadWeather(weatherResponse);
+                            weatherContract.loadWeather(utilsModel.getThreeItemsWeather(weatherResponse));
                             weatherContract.hideLoading();
                         },
                         throwable -> weatherContract.showErrorLoading()
